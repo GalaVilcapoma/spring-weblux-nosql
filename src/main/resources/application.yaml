@@ -6,8 +6,8 @@ spring:
     name: spring-webflux-nosql
   data:
     mongodb:
-      database: DATABASE_MONGODB
-      uri: URL_MONDODB_ATALAS
+      database: vallegrande_db
+      uri: mongodb+srv://anthonygala_db_user:Iftk7ycgTDct6dSG@cluster0.k3yvbp8.mongodb.net/vallegrande_db?retryWrites=true&w=majority
 
 springdoc:
   api-docs:
