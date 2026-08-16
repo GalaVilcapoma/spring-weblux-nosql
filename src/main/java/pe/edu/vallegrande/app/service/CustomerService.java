@@ -6,10 +6,15 @@ import reactor.core.publisher.Mono;
 
 public interface CustomerService {
 
-    Flux<Customer> findAll();
+    // Cloud (Atlas)
+    Flux<Customer> findAllCloud();
+    Mono<Customer> findByIdCloud(String id);
 
-    Mono<Customer> findById(String id);
+    // Local (Docker)
+    Flux<Customer> findAllLocal();
+    Mono<Customer> findByIdLocal(String id);
 
+    // Save to both
     Mono<Customer> save(Customer customer);
     
 }

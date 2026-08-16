@@ -19,15 +19,31 @@ public class CustomerRest {
         this.customerService = customerService;
     }
 
-    @GetMapping
-    public Flux<Customer> findAll() {
-        return customerService.findAll();
+    // ========== CLOUD (Atlas) ==========
+
+    @GetMapping("/cloud")
+    public Flux<Customer> findAllCloud() {
+        return customerService.findAllCloud();
     }
 
-    @GetMapping("/{id}")
-    public Mono<Customer> findById(@PathVariable String id) {
-        return customerService.findById(id);
+    @GetMapping("/cloud/{id}")
+    public Mono<Customer> findByIdCloud(@PathVariable String id) {
+        return customerService.findByIdCloud(id);
     }
+
+    // ========== LOCAL (Docker) ==========
+
+    @GetMapping("/local")
+    public Flux<Customer> findAllLocal() {
+        return customerService.findAllLocal();
+    }
+
+    @GetMapping("/local/{id}")
+    public Mono<Customer> findByIdLocal(@PathVariable String id) {
+        return customerService.findByIdLocal(id);
+    }
+
+    // ========== SAVE (Cloud + Local) ==========
 
     @PostMapping("/save")
     public Mono<Customer> save(@RequestBody Customer customer) {

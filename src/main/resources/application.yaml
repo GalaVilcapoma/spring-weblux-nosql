@@ -6,8 +6,13 @@ spring:
     name: spring-webflux-nosql
   data:
     mongodb:
-      database: vallegrande_db
-      uri: mongodb+srv://anthonygala_db_user:Iftk7ycgTDct6dSG@cluster0.k3yvbp8.mongodb.net/vallegrande_db?retryWrites=true&w=majority
+      uri: mongodb+srv://anthonygala_db_user:Iftk7ycgTDct6dSG@cluster0.k3yvbp8.mongodb.net/database_cloud?retryWrites=true&w=majority
+      database: database_cloud
+
+mongodb:
+  local:
+    uri: mongodb://admin:admin12345@localhost:27017/database_local?authSource=admin
+    database: database_local
 
 springdoc:
   api-docs:
